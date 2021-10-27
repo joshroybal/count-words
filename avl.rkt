@@ -209,9 +209,9 @@
 	   (remove-node k (right node)))))
 	(else
 	 (cond ((null? (left node))
-		(right node))
+		(balance-node (right node)))
 	       ((null? (right node))
-		(left node))
+		(balance-node (left node)))
 	       (else
 		(let ((new-key (max-key (left node))))
 		  (balance-node
